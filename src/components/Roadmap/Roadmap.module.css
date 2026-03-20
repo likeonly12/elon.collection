@@ -1,0 +1,144 @@
+.roadmap {
+  padding: 80px 40px 100px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sectionHeader {
+  margin-bottom: 48px;
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  font-size: 16px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  gap: 28px;
+  position: relative;
+}
+
+.line {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--border);
+  border: 3px solid var(--border);
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+
+.active .dot {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
+}
+
+.pulse {
+  position: absolute;
+  inset: -8px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  animation: pulseAnim 2s ease-in-out infinite;
+}
+
+.connector {
+  width: 2px;
+  flex: 1;
+  min-height: 40px;
+  background: var(--border);
+}
+
+.active .connector {
+  background: linear-gradient(to bottom, var(--accent), var(--border));
+}
+
+.content {
+  padding-bottom: 48px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px 28px;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.active .content {
+  border-color: rgba(34, 197, 94, 0.3);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.05) 0%, var(--bg-secondary) 100%);
+}
+
+.phase {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+}
+
+.active .phase {
+  color: var(--accent);
+}
+
+.itemTitle {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: -0.3px;
+}
+
+.description {
+  color: var(--text-secondary);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.badge {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 5px 14px;
+  background: rgba(34, 197, 94, 0.15);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 50px;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.item:not(.active) .content {
+  opacity: 0.5;
+}
+
+.item:not(.active):hover .content {
+  opacity: 0.7;
+}
+
+@keyframes pulseAnim {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0; transform: scale(1.5); }
+}
